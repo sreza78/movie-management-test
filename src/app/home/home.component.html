@@ -1,0 +1,45 @@
+<div class="grid-layout-container">
+    <kendo-gridlayout class="rtl">
+      <kendo-gridlayout-item [row]="1" [col]="1" [colSpan]="5">
+        <div class="k-text-inverse k-text-uppercase k-font-weight-bold">
+          <h2 id="lbl_title">سامانه مدیریت فیلم</h2>
+        </div>
+      </kendo-gridlayout-item>
+      <kendo-gridlayout-item [row]="1" [col]="2" [colSpan]="5" *ngIf="!user; else els">
+        <button
+        kendoButton
+        fillMode="outline"
+        rounded="large"
+        themeColor="info"
+        id="btn_login"
+        (click)="go_to_login()"
+      >ورود به سامانه</button>
+      </kendo-gridlayout-item>
+      <ng-template #els>
+        <kendo-gridlayout-item [row]="1" [col]="2" [colSpan]="5">
+          <div class="user_info">
+            <label>{{user?.name}}</label>
+            <button
+            kendoButton
+            fillMode="outline"
+            rounded="large"
+            themeColor="error"
+            id="btn_logout"
+            (click)="logout()"
+          >خروج</button>
+          </div>
+        </kendo-gridlayout-item>
+      </ng-template>
+      <div class="center" *ngIf="loading">
+        <kendo-loader
+          type="converging-spinner"
+          themeColor="info"
+          size="medium"
+        >
+        </kendo-loader>
+      </div>
+      <kendo-gridlayout-item *ngFor="let item of movies" [colSpan]="1">
+        <movie-item [movie]="item"></movie-item>
+      </kendo-gridlayout-item>
+    </kendo-gridlayout>
+  </div>

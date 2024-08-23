@@ -1,0 +1,16 @@
+h2{
+    margin: 0px;
+    text-align: center;
+}
+
+
+kendo-card{
+    transition: 0.2s ease-in-out;
+    margin: 10px;
+    cursor: pointer;
+}
+
+kendo-card:hover{
+    transform: scale(1.02);
+    box-shadow: black 1px 1px 10px -4px;
+}

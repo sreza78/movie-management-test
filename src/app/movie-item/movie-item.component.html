@@ -1,0 +1,8 @@
+<div (click)="show()" *ngIf="movie">
+  <kendo-card width="200px" >
+    <img kendoCardMedia [src]="movie.imageUrl" />
+    <kendo-card-body>
+        <h2>{{movie.title}}</h2>
+    </kendo-card-body>
+  </kendo-card>
+</div>

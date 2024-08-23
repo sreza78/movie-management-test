@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Vazir;
+    src: url('./assets/fonts/Vazir-Regular.eot');
+    src: url('./assets/fonts/Vazir-Regular.eot?#iefix') format('embedded-opentype'),
+         url('./assets/fonts/Vazir-Regular.woff2') format('woff2'),
+         url('./assets/fonts/Vazir-Regular.woff') format('woff'),
+         url('./assets/fonts/Vazir-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+* , body{
+    font-family: Vazir !important;
+}
+
+.rtl{
+    direction: rtl !important;
+}
+
+.ltr{
+    direction: ltr !important;
+}

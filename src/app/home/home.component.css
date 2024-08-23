@@ -1,0 +1,32 @@
+kendo-gridlayout-item{
+    align-content: center;
+}
+
+#lbl_title{
+    margin-right: 30px;
+}
+
+#btn_login{
+    float: left;
+    margin-left: 20px;
+}
+
+.user_info{
+    float: left;
+}
+
+#btn_logout{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}

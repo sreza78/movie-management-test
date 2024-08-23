@@ -1,0 +1,28 @@
+<div class="movie-details-container rtl">
+  <div class="movie-image">
+    <img [src]="movie?.imageUrl" alt="{{ movie?.title }}" />
+  </div>
+
+  <div class="movie-info">
+    <h2>{{ movie?.title }}</h2>
+    <p><strong>کارگردان:</strong> {{ movie?.director }}</p>
+    <p><strong>ژانر:</strong> {{ movie?.genre }}</p>
+  </div>
+
+  <div class="comment-section">
+    <kendo-textarea
+      [(ngModel)]="newComment"
+      placeholder="نظر خود را وارد کنید..."
+      [rows]="2"
+      resizable="none"
+    >
+    </kendo-textarea>
+    <button kendoButton class="comment-button" (click)="addComment()">ارسال</button>
+
+    <div class="comments-list">
+      <div class="comment" *ngFor="let comment of movie?.comments">
+        <p><strong>{{ comment.userId }}:</strong> {{ comment.content }}</p>
+      </div>
+    </div>
+  </div>
+</div>

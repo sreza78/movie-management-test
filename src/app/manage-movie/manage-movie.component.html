@@ -1,0 +1,29 @@
+<div class="movie-management-container">
+    <button kendoButton class="add-movie-button" (click)="onAddMovie()">
+      افزودن فیلم جدید
+    </button>
+  
+    <kendo-grid
+      [kendoGridBinding]="movies"
+      [pageSize]="10"
+      [sortable]="true"
+      [filterable]="true"
+      [pageable]="true"
+    >
+      <kendo-grid-column field="imageUrl" title="تصویر" [width]=150>
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <img [src]="dataItem.imageUrl" alt="{{ dataItem.title }}" class="movie-thumbnail" />
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column field="title" title="عنوان" [width]=200></kendo-grid-column>
+      <kendo-grid-column field="genre" title="ژانر" [width]=150></kendo-grid-column>
+      <kendo-grid-column field="director" title="کارگردان" [width]=200></kendo-grid-column>
+      <kendo-grid-column title="عملیات" [width]=200>
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <button kendoButton (click)="onUpdateMovie(dataItem)" class="update-button">آپدیت</button>
+          <button kendoButton (click)="onDeleteMovie(dataItem)" class="delete-button">حذف</button>
+        </ng-template>
+      </kendo-grid-column>
+    </kendo-grid>
+  </div>
+  

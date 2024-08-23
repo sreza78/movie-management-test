@@ -1,0 +1,56 @@
+<div class="form">
+    <form class="k-form k-form-md" [formGroup]="form">
+      <fieldset class="k-form-fieldset">
+        <h2 class="k-form-legend">خوش آمدید</h2>
+
+        <kendo-avatar
+          imageSrc="assets/images/customer.png"
+          width="80px"
+          height="80px"
+          shape="circle"
+          themeColor="secondary"
+        ></kendo-avatar>
+        <kendo-formfield class="rtl">
+          <kendo-label class="rtl" [for]="username" text="نام کاربری"></kendo-label>
+          <kendo-textbox
+            formControlName="username"
+            [clearButton]="true"
+            #username
+            required
+          ></kendo-textbox>
+          <kendo-formerror>لطفا نام کاربری را وارد کنید</kendo-formerror>
+        </kendo-formfield>
+        <kendo-formfield class="rtl">
+          <kendo-label class="rtl" [for]="password" text="کلمه عبور"> </kendo-label>
+          <kendo-textbox
+            formControlName="password"
+            #password
+            required
+            [clearButton]="true"
+          >
+            <ng-template kendoTextBoxSuffixTemplate>
+              <button
+                kendoButton
+                [svgIcon]="svgEye"
+                rounded="small"
+                fillMode="solid"
+                (click)="toggleVisibility()"
+              ></button>
+            </ng-template>
+          </kendo-textbox>
+
+          <kendo-formerror>لطفا کلمه عبور را وارد کنید</kendo-formerror>
+        </kendo-formfield>
+
+        <div class="k-form-buttons">
+          <button kendoButton           
+          fillMode="outline"
+          rounded="large"
+          themeColor="success"
+          class="btnLogin" (click)="login()">
+            ورود
+          </button>
+        </div>
+      </fieldset>
+    </form>
+  </div>

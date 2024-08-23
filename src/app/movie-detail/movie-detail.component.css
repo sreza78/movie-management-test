@@ -1,0 +1,71 @@
+.movie-details-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .movie-image {
+    grid-column: span 3;
+  }
+  
+  .movie-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .movie-info {
+    grid-column: span 9;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .comment-section {
+    grid-column: span 12;
+    margin-top: 20px;
+  }
+  
+  .comment-section kendo-textarea {
+    width: calc(100% - 120px); /* Shrink the textarea */
+    margin-right: 10px;
+  }
+  
+  
+  .comments-list {
+    margin-top: 20px;
+  }
+  
+  .comment {
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .movie-details-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  
+    .movie-image {
+      grid-column: span 12;
+      margin-bottom: 20px;
+    }
+  
+    .movie-info {
+      grid-column: span 12;
+      justify-content: center;
+    }
+  
+    .comment-section kendo-textarea {
+      width: 100%;
+      margin: 0 auto 10px;
+    }
+  
+    .comment-button {
+      width: 100%;
+    }
+  }
+  
