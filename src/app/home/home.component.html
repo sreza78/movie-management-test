@@ -18,6 +18,14 @@
       <ng-template #els>
         <kendo-gridlayout-item [row]="1" [col]="2" [colSpan]="5">
           <div class="user_info">
+            <button
+            kendoButton
+            fillMode="outline"
+            rounded="large"
+            themeColor="success"
+            id="btn_manage"
+            (click)="manage()"
+          >مدیریت</button>
             <label>{{user?.name}}</label>
             <button
             kendoButton

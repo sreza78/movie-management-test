@@ -11,6 +11,10 @@ kendo-gridlayout-item{
     margin-left: 20px;
 }
 
+#btn_manage{
+    margin-left: 20px;
+}
+
 .user_info{
     float: left;
 }

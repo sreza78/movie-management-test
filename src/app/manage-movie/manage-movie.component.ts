@@ -4,11 +4,12 @@ import { KENDO_GRID } from '@progress/kendo-angular-grid';
 import { Movie } from '../../models/movie.model';
 import { MovieService } from '../../services/movie.service';
 import { AlertService } from '../../services/alert.service';
+import { KENDO_BUTTON } from '@progress/kendo-angular-buttons';
 
 @Component({
   selector: 'app-manage-movie',
   standalone: true,
-  imports: [KENDO_GRID],
+  imports: [KENDO_GRID, KENDO_BUTTON],
   templateUrl: './manage-movie.component.html',
   styleUrl: './manage-movie.component.css'
 })

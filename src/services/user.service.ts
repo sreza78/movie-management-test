@@ -7,7 +7,8 @@ import { User } from '../models/user.model';
 export class UserService {
 
   private users: User[] = [
-    {id : 1, name : "seyyed reza sefidgar", username: "reza", password:"12345"}
+    {id : 1, name : "سید رضا سفیدگر", username: "reza", password:"12345"},
+    {id : 2, name : "حسن طنابی", username: "tanabi", password:"67890"}
   ]
 
   constructor() { }

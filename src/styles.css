@@ -21,3 +21,9 @@
 .ltr{
     direction: ltr !important;
 }
+
+.alert{
+    direction: rtl;
+    font-size: 15px;
+    margin-bottom: 20px;
+}

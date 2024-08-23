@@ -44,4 +44,8 @@ export class HomeComponent {
     localStorage.removeItem("loggedin")
     this.user = null
   }
+
+  manage(){
+    this.router.navigate(["/manage"])
+  }
 }

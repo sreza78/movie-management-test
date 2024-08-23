@@ -1,5 +1,8 @@
 <div class="movie-management-container">
-    <button kendoButton class="add-movie-button" (click)="onAddMovie()">
+    <button kendoButton size="medium"
+    rounded="large"
+    fillMode="solid"
+    themeColor="success" class="add-movie-button" (click)="onAddMovie()">
       افزودن فیلم جدید
     </button>
   
@@ -20,8 +23,15 @@
       <kendo-grid-column field="director" title="کارگردان" [width]=200></kendo-grid-column>
       <kendo-grid-column title="عملیات" [width]=200>
         <ng-template kendoGridCellTemplate let-dataItem>
-          <button kendoButton (click)="onUpdateMovie(dataItem)" class="update-button">آپدیت</button>
-          <button kendoButton (click)="onDeleteMovie(dataItem)" class="delete-button">حذف</button>
+          <button kendoButton size="small"
+          rounded="large"
+          fillMode="solid"
+          themeColor="info"
+          (click)="onUpdateMovie(dataItem)">آپدیت</button>
+          <button kendoButton size="small"
+          rounded="large"
+          fillMode="solid"
+          themeColor="error" (click)="onDeleteMovie(dataItem)">حذف</button>
         </ng-template>
       </kendo-grid-column>
     </kendo-grid>

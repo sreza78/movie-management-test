@@ -2,27 +2,9 @@
     padding: 20px;
   }
   
-  .add-movie-button {
-    margin-bottom: 20px;
-    background-color: #28a745;
-    color: #fff;
-    font-weight: bold;
-  }
-  
   .movie-thumbnail {
     width: 100px;
     height: auto;
     border-radius: 4px;
-  }
-  
-  .update-button {
-    background-color: #ffc107;
-    color: #fff;
-    margin-right: 10px;
-  }
-  
-  .delete-button {
-    background-color: #dc3545;
-    color: #fff;
   }
   

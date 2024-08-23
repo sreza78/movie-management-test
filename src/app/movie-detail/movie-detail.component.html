@@ -1,6 +1,6 @@
 <div class="movie-details-container rtl">
   <div class="movie-image">
-    <img [src]="movie?.imageUrl" alt="{{ movie?.title }}" />
+    <img width="300px" [src]="movie?.imageUrl" alt="{{ movie?.title }}" />
   </div>
 
   <div class="movie-info">
@@ -10,18 +10,54 @@
   </div>
 
   <div class="comment-section">
-    <kendo-textarea
-      [(ngModel)]="newComment"
-      placeholder="نظر خود را وارد کنید..."
-      [rows]="2"
-      resizable="none"
-    >
-    </kendo-textarea>
-    <button kendoButton class="comment-button" (click)="addComment()">ارسال</button>
+    <div class="comment-input">
+      <kendo-textarea
+        [(ngModel)]="newComment"
+        placeholder="نظر خود را وارد کنید..."
+        [rows]="5"
+        resizable="none"
+        class="rtl"
+      >
+      </kendo-textarea>
+      <button
+        kendoButton
+        size="large"
+        rounded="large"
+        fillMode="outline"
+        themeColor="info"
+        class="comment-button"
+        (click)="addComment()"
+      >ارسال</button>
+    </div>
 
     <div class="comments-list">
       <div class="comment" *ngFor="let comment of movie?.comments">
-        <p><strong>{{ comment.userId }}:</strong> {{ comment.content }}</p>
+        <p><strong>{{ comment.userName }}:</strong> {{ comment.content }}</p>
+
+        <!-- Reply section -->
+        <div class="reply-section">
+          <div class="replies-list" *ngIf="comment.replies">
+            <div class="reply" *ngFor="let reply of comment.replies">
+              <p><strong>{{ reply.userName }}:</strong> {{ reply.content }}</p>
+            </div>
+          </div>
+          <kendo-textarea
+            placeholder="پاسخ خود را وارد کنید..."
+            [rows]="3"
+            resizable="none"
+            class="rtl"
+          >
+          </kendo-textarea>
+          <button
+            kendoButton
+            size="small"
+            rounded="large"
+            fillMode="solid"
+            themeColor="tertiary"
+            class="reply-button"
+            (click)="addReply(comment.id)"
+          >ارسال پاسخ</button>
+        </div>
       </div>
     </div>
   </div>
